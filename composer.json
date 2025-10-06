@@ -1,0 +1,33 @@
+{
+  "name": "studyroom/booking-system",
+  "description": "스터디룸 예약 시스템 (CodeIgniter 4 기반)",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeong Jongseog",
+      "email": "jjs@smonster.kr"
+    }
+  ],
+  "require": {
+    "php": "7.4",
+    "codeigniter4/framework": "^4.4",
+    "ext-json": "*",
+    "ext-mysqli": "*",
+    "ext-mbstring": "*",
+    "monolog/monolog": "^3.0",
+    "vlucas/phpdotenv": "^5.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "@php spark migrate"
+    ]
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
