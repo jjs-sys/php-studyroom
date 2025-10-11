@@ -78,6 +78,7 @@ class CreateStudyroomTables extends Migration
             ['branch_id' => 1, 'name' => 'A'],
             ['branch_id' => 1, 'name' => 'B'],
             ['branch_id' => 2, 'name' => 'A'],
+            ['branch_id' => 2, 'name' => 'B'],
         ]);
     }
 
