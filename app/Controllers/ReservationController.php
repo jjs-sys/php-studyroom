@@ -157,7 +157,7 @@ class ReservationController extends Controller
         return $this->response->setJSON(['message' => '🎉 예약이 확정되었습니다!', 'id' => $id]);
     }
 
-    /** ✅ 관리자 - 회원 + 예약 정보 수정 (이름, 전화번호, 가격 포함) */
+    /**  관리자 - 회원 + 예약 정보 수정 (이름, 전화번호, 가격 포함) */
     public function adminUpdateMemberGet($memberId = null, $newName = null, $newPhone = null)
     {
         $id = (int) $memberId;
@@ -172,13 +172,13 @@ class ReservationController extends Controller
         $newName = urldecode($newName);
         $newPhone = urldecode($newPhone);
 
-        // ✅ members 테이블 수정
+        // members 테이블 수정
         $memberUpdated = $this->model->adminUpdateMember($id, [
             'name'  => $newName,
             'phone' => $newPhone
         ]);
 
-        // ✅ reservations 테이블의 동일 회원 데이터도 업데이트
+        // reservations 테이블의 동일 회원 데이터도 업데이트
         $this->model->db->table('reservations')
             ->where('member_id', $id)
             ->update([
@@ -200,7 +200,7 @@ class ReservationController extends Controller
         }
     }
 
-    /** ✅ 관리자 - 가격 수정 */
+    /** 관리자 - 가격 수정 */
     public function adminUpdatePriceGet($reservationId = null, $newPrice = null)
     {
         $id = (int) $reservationId;
