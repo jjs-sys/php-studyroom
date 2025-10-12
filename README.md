@@ -71,7 +71,7 @@ database.default.port = 3306
 
 
 
-🚀 로컬 서버 실행
+##🚀 로컬 서버 실행
 
 php spark serve
 실행 후 브라우저에서 아래 주소로 접근하세요 👇
@@ -81,7 +81,7 @@ php spark serve
 예약 조회	http://localhost:8080/view/find
 관리자 페이지	http://localhost:8080/view/admin
 
-🔧 관리자 기능 (REST API)
+##🔧 관리자 기능 (REST API)
 기능	URL 예시
 가격 수정	/admin/update-price/{예약ID}/{새가격}
 회원 정보 수정	/admin/update-member/{회원ID}/{이름}/{전화번호}
@@ -95,7 +95,7 @@ http://localhost:8080/admin/update-member/2/홍길동/01099998888
 http://localhost:8080/admin/delete/5
 
 
-⚙️ 파일별 역할 요약
+##⚙️ 파일별 역할 요약
 🧠 Model (ReservationModel.php)
 
 DB와 직접 통신하는 계층
@@ -155,7 +155,7 @@ verifyCode() → 인증번호 확인
 
 createReservation() → 예약 확정
 
-🔄 동작 흐름 요약
+##🔄 동작 흐름 요약
 [View] → [Routes] → [Controller] → [Model] → [Database]
    ↑                                        ↓
    └────────────── JSON 응답 (성공/실패 메시지)
@@ -171,7 +171,7 @@ createReservation() → 예약 확정
 
 결과 JSON 응답 출력 (🎉 예약 완료 메시지)
 
-🧠 주요 핵심 함수 (비즈니스 로직 중심)
+##🧠 주요 핵심 함수 (비즈니스 로직 중심)
 함수명	위치	역할
 requestCode()	Controller	이름/전화번호를 받아 6자리 인증번호 생성 후 세션 저장
 verifyCode()	Controller	사용자가 입력한 인증번호 검증 (세션과 비교)
